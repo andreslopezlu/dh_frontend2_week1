@@ -73,7 +73,7 @@ function compararJugadas() {
     return resultadoRonda;
 }
 
-const resultadoDePartida = compararJugadas()
+// const resultadoDePartida = compararJugadas()
 
 /* -------------------------------------------------------------------------- */
 /*                          CONSIGNA MESA DE TRABAJO                          */
@@ -89,5 +89,5 @@ function motrarResultados(resultado) {
     resultado.includes('perdiste') ? alert('Sigue intentando') : alert('todo ok');
 }
 
-motrarResultados(resultadoDePartida)
+// motrarResultados(resultadoDePartida)
 

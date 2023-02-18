@@ -18,6 +18,8 @@
 let puntajes = {
     usuario: 0,
     computadora: 0,
+    empates: 0,
+    partidas: 0
 }
 
 const nombreJugador = iniciarJuego();
@@ -25,19 +27,21 @@ const nombreJugador = iniciarJuego();
 // 👇 mientras ninguno haya llegado a 2 puntos seguimos jugando
 while (puntajes.usuario < 2 && puntajes.computadora < 2) {
 
-
+    puntajes.partidas++;
     const resultadoDePartida = compararJugadas()
     alert(resultadoDePartida);
 
     console.log(resultadoDePartida);
     if (resultadoDePartida.includes("ganaste")) {
         puntajes.usuario++;
-    } else if (resultadoDePartida.includes("ganaste")) {
+    } else if (resultadoDePartida.includes("perdiste")) {
         puntajes.computadora++
+    } else if (resultadoDePartida.includes("empate")) {
+        puntajes.empates++
     }
 
     console.table(puntajes);
-
+    motrarResultados(resultadoDePartida)
 }
 
 /* -------------------------------------------------------------------------- */
@@ -47,3 +51,4 @@ while (puntajes.usuario < 2 && puntajes.computadora < 2) {
 // 2- Modificar el bucle para poder sumar tambien la cantidad de empates.
 // 3- Mostrar en cada partida el resultado al usuario.
 // 4- Mostrar finalmente la cantidad de partidas jugadas y que sepa cuantas ganó, perdió o empató durante el juego.
+
