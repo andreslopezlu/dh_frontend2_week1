@@ -6,7 +6,16 @@ function iniciarJuego() {
     // suludamos al usuario
     alert("Bienvenido al piedra papel o tijera de Frontend II.");
     // guardamos en una variable en nombre ingresado
-    const nombre = prompt("Ingese su nombre por favor:")
+
+    let nombre;
+    let validacion;
+
+    do{
+
+        nombre = prompt("Ingese su nombre por favor:")
+        nombre.length < 3 || !isNaN(nombre) ? validacion = true : validacion = false;
+
+    } while(validacion)
 
     alert("Gracias por jugar " + nombre + ". ¡Mucha suerte!");
 
