@@ -74,6 +74,7 @@ function compararJugadas() {
 }
 
 const resultadoDePartida = compararJugadas()
+
 /* -------------------------------------------------------------------------- */
 /*                          CONSIGNA MESA DE TRABAJO                          */
 /* -------------------------------------------------------------------------- */
@@ -82,5 +83,11 @@ const resultadoDePartida = compararJugadas()
 // 3- A su vez debe mostrar al usuario una alerta con el resutado de la partida.
 // 4- Finalmente, si el resultado fue una derrota debe mostrarle al usuario un mensaje de aliento para desearle suerte en la próxima oportunidad.
 
+function motrarResultados(resultado) {
+    console.log(resultado);
+    alert(`Resultado: ${resultado}`);
+    resultado.includes('perdiste') ? alert('Sigue intentando') : alert('todo ok');
+}
 
+motrarResultados(resultadoDePartida)
 
